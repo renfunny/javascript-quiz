@@ -1,0 +1,83 @@
+nav {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.high-scores {
+  text-decoration: none;
+  color: rgb(124, 35, 207);
+  font-weight: lighter;
+}
+.high-scores:hover {
+  color: rgb(154, 91, 212);
+}
+.high-scores:active {
+  color: rgb(89, 29, 145);
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+.main-menu {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  font-size: 2rem;
+  padding: 1.5rem;
+}
+p {
+  width: 60%;
+  text-align: center;
+  line-height: 1.5;
+}
+.start-btn {
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+  border: 0px;
+  border-radius: 5px;
+  color: whitesmoke;
+  background-color: rgb(124, 35, 207);
+}
+.start-btn:hover,
+.op:hover {
+  background-color: rgb(154, 91, 212);
+  color: whitesmoke;
+}
+.start-btn:active,
+.op:active {
+  background-color: rgb(89, 29, 145);
+}
+.quiz-question {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  padding-bottom: 1.5rem;
+}
+.op {
+  width: 50%;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+}
+.result {
+  padding: 1rem 1.5rem;
+  font-weight: lighter;
+  font-style: italic;
+  color: slategrey;
+}
+
+.hidden {
+  display: none;
+}

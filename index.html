@@ -26,16 +26,19 @@
       </section>
       </div>
       <div class="wrapper">
-      <section class="quiz-question hidden">
+      <section class="quiz-questions hidden">
         <h1 class="question">Question</h1>
         <div class="options">
-            <button class="option-A op">Option A</button>
-            <button class="option-B op">Option B</button>
-            <button class="option-C op">Option C</button>
-            <button class="option-D op">Option D</button>
+            <button class="optionA op" data-state="incorrect">Option A</button>
+            <button class="optionB op" data-state="incorrect">Option B</button>
+            <button class="optionC op" data-state="incorrect">Option C</button>
+            <button class="optionD op" data-state="incorrect">Option D</button>
         </div>
         <hr>
+        <footer>
         <h1 class="result"></h1>
+        <button  class="next-btn">Next!</button>
+        </footer>
       </section>
       </div>
     </main>

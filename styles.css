@@ -34,7 +34,8 @@ p {
   text-align: center;
   line-height: 1.5;
 }
-.start-btn {
+.start-btn,
+.next-btn {
   margin-top: 1.5rem;
   padding: 0.5rem;
   border: 0px;
@@ -43,12 +44,14 @@ p {
   background-color: rgb(124, 35, 207);
 }
 .start-btn:hover,
-.op:hover {
+.op:hover,
+.next-btn:hover {
   background-color: rgb(154, 91, 212);
   color: whitesmoke;
 }
 .start-btn:active,
-.op:active {
+.op:active,
+.next-btn:active {
   background-color: rgb(89, 29, 145);
 }
 .quiz-question {
@@ -80,4 +83,9 @@ p {
 
 .hidden {
   display: none;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

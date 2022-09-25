@@ -100,25 +100,26 @@ var startQuiz = function () {
     document.querySelector(`.optionC`).textContent = currentQuestion.optionC;
     document.querySelector(`.optionD`).textContent = currentQuestion.optionD;
 
-    var setAnswer = function () {
+    var evaluateAnswer = function () {
       var currentQuestion = questions[questionNumber];
       var currentAnswer = currentQuestion.answer;
       console.log(currentAnswer);
+
       var correctAnswer = document.querySelector(`.${currentAnswer}`);
       correctAnswer.setAttribute(`data-state`, `correct`);
-    };
-    setAnswer();
 
-    var evaluateAnswer = function () {
       var optionContainer = document.querySelector(`.options`);
       optionContainer.addEventListener(`click`, function (event) {
         var userInput = event.target;
+
         if (userInput.matches(`button`)) {
           var state = userInput.getAttribute(`data-state`);
+
           if (state === `correct`) {
             questionNumber++;
             document.querySelector(`.result`).textContent = `Correct!`;
             userInput.dataset.state = `incorrect`;
+
             if (questionNumber < questions.length) {
               displayQuiz(questionNumber);
             }

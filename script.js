@@ -84,6 +84,7 @@ var quizMenu = document.querySelector(`.main-menu`);
 var quizQuestions = document.querySelector(`.quiz-questions`);
 
 var startQuiz = function () {
+  //Starts timer
   setTimer();
   var questionNumber = 0;
 
@@ -92,50 +93,50 @@ var startQuiz = function () {
     quizMenu.classList.add(`hidden`);
     //Displays quiz questions
     quizQuestions.classList.remove("hidden");
-    //Starts timer
     var currentQuestion = questions[questionNumber];
     document.querySelector(`.question`).textContent = currentQuestion.question;
     document.querySelector(`.optionA`).textContent = currentQuestion.optionA;
     document.querySelector(`.optionB`).textContent = currentQuestion.optionB;
     document.querySelector(`.optionC`).textContent = currentQuestion.optionC;
     document.querySelector(`.optionD`).textContent = currentQuestion.optionD;
+
+    var setAnswer = function () {
+      var currentQuestion = questions[questionNumber];
+      var currentAnswer = currentQuestion.answer;
+      console.log(currentAnswer);
+      var correctAnswer = document.querySelector(`.${currentAnswer}`);
+      correctAnswer.setAttribute(`data-state`, `correct`);
+    };
+    setAnswer();
+
+    var evaluateAnswer = function () {
+      var optionContainer = document.querySelector(`.options`);
+      optionContainer.addEventListener(`click`, function (event) {
+        var userInput = event.target;
+        if (userInput.matches(`button`)) {
+          var state = userInput.getAttribute(`data-state`);
+          if (state === `correct`) {
+            questionNumber++;
+            document.querySelector(`.result`).textContent = `Correct!`;
+            userInput.dataset.state = `incorrect`;
+            if (questionNumber < questions.length) {
+              displayQuiz(questionNumber);
+            }
+          } else {
+            questionNumber++;
+            score -= 10;
+            document.querySelector(`.result`).textContent = `Wrong!`;
+            correctAnswer.setAttribute(`data-state`, `incorrect`);
+            if (questionNumber < questions.length) {
+              displayQuiz(questionNumber);
+            }
+          }
+        }
+      });
+    };
+    evaluateAnswer();
   };
   displayQuiz(questionNumber);
-
-  var setAnswer = function () {
-    var currentQuestion = questions[questionNumber];
-    var currentAnswer = currentQuestion.answer;
-    console.log(currentAnswer);
-    var correctAnswer = document.querySelector(`.${currentAnswer}`);
-    correctAnswer.setAttribute(`data-state`, `correct`);
-  };
-  var evaluateAnswer = function () {
-    var optionContainer = document.querySelector(`.options`);
-    optionContainer.addEventListener(`click`, function (event) {
-      var userInput = event.target;
-      if (userInput.matches(`button`)) {
-        var state = userInput.getAttribute(`data-state`);
-        if (state === `correct`) {
-          questionNumber++;
-          document.querySelector(`.result`).textContent = `Correct!`;
-          userInput.dataset.state = `incorrect`;
-          changeQuestion();
-        } else {
-          questionNumber++;
-          score -= 10;
-          document.querySelector(`.result`).textContent = `Wrong!`;
-          correctAnswer.setAttribute(`data-state`, `incorrect`);
-          changeQuestion();
-        }
-      }
-    });
-  };
-
-  var changeQuestion = function () {
-    if (questionNumber < questions.length) {
-      displayQuiz(questionNumber);
-    }
-  };
 };
 
 document.querySelector(`.start-btn`).addEventListener(`click`, startQuiz);

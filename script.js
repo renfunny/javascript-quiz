@@ -155,7 +155,7 @@ function setTimer() {
   timeInterval = setInterval(function () {
     score--;
     timeEl.textContent = score;
-    if (score === 0 || score < 0) {
+    if (score === 0) {
       clearInterval(timeInterval);
       score = 0;
       showHighscoreMenu();

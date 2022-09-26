@@ -131,3 +131,7 @@ input {
 .hidden {
   display: none;
 }
+ol {
+  list-style: decimal;
+  list-style-position: inside;
+}

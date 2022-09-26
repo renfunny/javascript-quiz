@@ -79,6 +79,8 @@ var questionNumber = 0;
 
 function clearHighScores() {
   localStorage.clear(`highScores`);
+  var highScoreList = document.querySelector(`.high-scores`);
+  highScoreList.innerHTML = "";
 }
 
 function backToMenu() {

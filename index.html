@@ -10,7 +10,7 @@
   </head>
   <body>
     <nav>
-      <h2><a href="#" class="high-scores">View high scores</a></h2>
+      <h2><a href="#" class="high-scores-nav">View high scores</a></h2>
       <h2>Time: <span class="time">0</span></h2>
     </nav>
     <main>
@@ -37,6 +37,31 @@
         <hr>
         <h1 class="result"></h1>
       </section>
+      </div>
+      <div class="wrapper ">
+        <section class="highscore-menu hidden">
+          <h1 class="end-title">All Done!</h1>
+          <h2>Your final score is: <span class="final-score"></span></h2>
+          <div class="input-wrapper">
+          <h1 class="initials">Enter your initials:</h1>
+          <input id="initials-input" type="text">
+          <button class="submit-btn">Submit</button>
+          </div>
+          <hr>
+          <h1 class="submition-status"></h1>
+        </section>
+      </div>
+      <div class="wrapper">
+        <section class="highscore-list hidden">
+          <h1 class="highscore-title">High Scores</h1>
+          <ol class="high-scores">
+
+          </ol>
+          <div class="highscore-btns">
+            <button class="back-btn">Go back</button>
+            <button class="clear-btn">Clear high scores</button>
+          </div>
+        </section>
       </div>
     </main>
     <script src="/script.js"></script>

@@ -119,12 +119,8 @@ function saveHighScore(score, highScores) {
 }
 
 function checkHighScore() {
-  var lowestScore = highScores[numHs - 1]?.score ?? 0;
-
-  if (score > lowestScore) {
-    saveHighScore(score, highScores);
-    // showHighScores();
-  }
+  if (score < 0) score = 0;
+  saveHighScore(score, highScores);
 }
 
 //Displays hishscore menu and adds event to submit button
@@ -157,7 +153,7 @@ function setTimer() {
   timeInterval = setInterval(function () {
     score--;
     timeEl.textContent = score;
-    if (score === 0) {
+    if (score === 0 || score < 0) {
       clearInterval(timeInterval);
       score = 0;
       showHighscoreMenu();

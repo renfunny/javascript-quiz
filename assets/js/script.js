@@ -71,7 +71,7 @@ var score = 75;
 var numHs = 5;
 //highscore variables
 var highScore = `highScores`;
-var highScores = JSON.parse(localStorage.getItem(highScores)) ?? [];
+var highScores = JSON.parse(localStorage.getItem(`highScores`)) ?? [];
 var highScoreString = localStorage.getItem(highScore);
 //used for timer, made it a global var so i can clear the interval in other functions
 var timeInterval;
